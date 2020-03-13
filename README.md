@@ -3,17 +3,23 @@ Code release for ["Gradually Vanishing Bridge for Adversarial Domain Adaptation"
 
 ## Dataset
 
-### Office-31
 Office-31 dataset can be found [here](https://people.eecs.berkeley.edu/~jhoffman/domainadapt/). 
 
-### Office-Home
 Office-Home dataset can be found [here](http://hemanthdv.org/OfficeHome-Dataset/).
 
-### VisDA-2017
 VisDA 2017 dataset can be found [here](https://github.com/VisionLearningGroup/taskcv-2017-public) in the classification track.
 
+## Requirements
+The code is implemented with Python(3.6) and Pytorch(1.0.0).
+
+To install the required python packages, run
+
+```
+pip install -r requirements.txt
+```
+
 ## Training
-Training instructions for GVB and CDAN-GD are in the `README.md` in [GVB](GVB) and [CDAN-GD](CDAN-GD) respectively.
+Training instructions for GVB-GD and CDAN-GD are in the `README.md` in [GVB-GD](GVB-GD) and [CDAN-GD](CDAN-GD) respectively.
 
 ## Citation
 If you use this code for your research, please consider citing:
