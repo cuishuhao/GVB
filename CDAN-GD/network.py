@@ -19,8 +19,7 @@ def init_weights(m):
         nn.init.normal_(m.weight, 1.0, 0.02)
         nn.init.zeros_(m.bias)
     elif classname.find('Linear') != -1:
-        #nn.init.xavier_normal_(m.weight)#TODO
-        nn.init.kaiming_normal_(m.weight)#TODO
+        nn.init.kaiming_normal_(m.weight)
         nn.init.zeros_(m.bias)
 
 def zero_weights(m):
@@ -32,9 +31,9 @@ def zero_weights(m):
         nn.init.normal_(m.weight, 1.0, 0.02)
         nn.init.zeros_(m.bias)
     elif classname.find('Linear') != -1:
-        #nn.init.xavier_normal_(m.weight)#TODO
-        nn.init.zeros_(m.weight)#TODO
+        nn.init.zeros_(m.weight)
         nn.init.zeros_(m.bias)
+
 class RandomLayer(nn.Module):
     def __init__(self, input_dim_list=[], output_dim=1024):
         super(RandomLayer, self).__init__()
@@ -222,7 +221,6 @@ class ResNetFc(nn.Module):
             self.fc.apply(init_weights)
             self.__in_features = bottleneck_dim
             self.bridge = nn.Linear(bottleneck_dim, class_num)
-            #self.bridge.apply(zero_weights)
             self.bridge.apply(init_weights)
         else:
             self.fc = nn.Linear(model_resnet.fc.in_features, class_num)
@@ -397,7 +395,6 @@ class AdversarialNetwork(nn.Module):
     self.dropout2 = nn.Dropout(0.5)
     self.sigmoid = nn.Sigmoid()
     self.apply(init_weights)
-    #self.fc_layer2.weight.data = - self.fc_layer2.weight.data
     self.iter_num = 0
     self.alpha = 10
     self.low = 0.0

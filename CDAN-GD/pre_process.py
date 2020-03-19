@@ -143,7 +143,6 @@ def image_train(resize_size=256, crop_size=224, alexnet=False):
     normalize = Normalize(meanfile='./ilsvrc_2012_mean.npy')
   return  transforms.Compose([
         transforms.Resize((resize_size,resize_size)),
-        #ResizeImage(resize_size),
         transforms.RandomResizedCrop(crop_size),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
@@ -158,7 +157,6 @@ def image_target(resize_size=256, crop_size=224, alexnet=False):
     normalize = Normalize(meanfile='./ilsvrc_2012_mean.npy')
   return  transforms.Compose([
         transforms.Resize((resize_size,resize_size)),
-        #ResizeImage(resize_size),
         transforms.RandomCrop(crop_size),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
@@ -176,8 +174,6 @@ def image_test(resize_size=256, crop_size=224, alexnet=False):
   start_last = resize_size - crop_size - 1
  
   return transforms.Compose([
-    #ResizeImage(resize_size),
-    #PlaceCrop(crop_size, start_center, start_center),
     transforms.Resize((resize_size,resize_size)),
     transforms.CenterCrop(224),
     transforms.ToTensor(),
