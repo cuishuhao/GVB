@@ -1,5 +1,5 @@
 # GVB
-Code release for ["Gradually Vanishing Bridge for Adversarial Domain Adaptation"]() (CVPR 2020)
+Code release for ["Gradually Vanishing Bridge for Adversarial Domain Adaptation"](https://arxiv.org/abs/2003.13183) (CVPR 2020)
 
 ## Dataset
 
